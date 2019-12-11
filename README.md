@@ -1,6 +1,4 @@
-# grading
-
-Grading System
+# Grading System
 
 Admin Login
 https://localhost/grading/admin
