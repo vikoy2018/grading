@@ -8,7 +8,7 @@ class Mydb_model extends CI_Model {
         // load database
         $this->load->database();  
     }
-    public function fetch($table='',$where=array(),$join=array(),$type='',$count=false,$select='*', $ordercoloumn='', $orderby='', $limit=''){
+    public function fetch($table='',$where=array(),$join=array(),$type='',$count=false,$select='*', $ordercoloumn='', $orderby='', $limit='', $group_by=''){
         $this->db->select($select);
         $this->db->from($table);
         if($where){
@@ -26,6 +26,9 @@ class Mydb_model extends CI_Model {
         }
         if($limit) {
             $this->db->limit($limit);
+        }
+        if($group_by) {
+            $this->db->group_by($group_by);
         }
         if($count){
             return $this->db->count_all_results();
@@ -45,7 +48,7 @@ class Mydb_model extends CI_Model {
         $this->db->where($where);
         return $this->db->delete($table);
     }
-    public function get_datatable($table='',$limit,$start,$order,$dir,$where=[],$join=[], $join_type='', $select='*',$search='',$search_columns=[],$count=false){
+    public function get_datatable($table='',$limit,$start,$order,$dir,$where=[],$join=[], $join_type='', $select='*',$search='',$search_columns=[],$count=false,$group_by=''){
         $this->db->select($select);
         $this->db->from($table);
         if($where){
@@ -73,6 +76,9 @@ class Mydb_model extends CI_Model {
         }
         $this->db->limit($limit,$start);
         $this->db->order_by($order,$dir);
+        if($group_by) {
+            $this->db->group_by($group_by);
+        }
         if($count){
             return $this->db->count_all_results();
         }

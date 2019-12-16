@@ -49,6 +49,7 @@ $(function(){
             studenthtml += '<option value="'+student.id+'">'+student.lastname+', '+student.firstname+'</option>';
         });
         $('#student_id').html(studenthtml);
+        $('#student_id').select2();
     });
 
     //add admin form validation

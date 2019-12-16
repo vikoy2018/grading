@@ -12,6 +12,7 @@
     </section>
 
     <span id="subject_teacher_id" data-value="<?php echo $subject_teacher_id; ?>"></span>
+    <span id='gradings' data-value='<?php echo json_encode($gradings); ?>'></span>
 
     <!-- Main content -->
     <section class="content">
@@ -22,6 +23,16 @@
                         <table id="studentTable" class="table table-bordered table-hover">
                             <thead>
                                 <th>Student</th>
+                                <th>Grades
+                                    <?php
+                                        $classes = ['grade-primary', 'grade-secondary', 'grade-success', 'grade-info'];
+                                        $num = 0;
+                                        foreach ($gradings as $grading) {
+                                            echo "<span class='student-grade-header ".$classes[$num]."'>".$grading->period."</span>";
+                                            $num++;
+                                        }
+                                    ?>
+                                </th>
                                 <th>Actions</th>
                             </thead>
                             <tbody>
@@ -52,8 +63,9 @@
                   	<label for="grading_id" class="col-sm-3 control-label">Period</label>
 
                   	<div class="col-sm-9">
-                    	<select class="form-control" id="grading_id" name="grading_id" required>
+                    	<select class="form-control" id="grading_id" name="grading_id" style="width:100%;" required>
                       </select>
+                      <label id="grading_id-error" class="error" for="grading_id"></label>
                   	</div>
                 </div>
           	</div>

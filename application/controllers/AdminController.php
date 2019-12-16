@@ -22,10 +22,10 @@ class AdminController extends MY_Controller {
         $data['title'] = 'Admin Dashboard';
         $data['active'] = 'admin-dashboard';
         $data['user'] = $this->user;
-        // $data['attendance_today'] = $this->mydb_model->fetch('attendance', ['date'=>date('Y-m-d')], [], '', true);
-        // $data['members'] = $this->mydb_model->fetch('employees', [], [], '', true);
-        // $data['events'] = $this->mydb_model->fetch('events', [], [], '', true);
-        // $data['total_attendance'] = $this->mydb_model->fetch('attendance', [], [], '', true);
+        $data['users'] = $this->mydb_model->fetch('users', [], [], '', true);
+        $data['subjects'] = $this->mydb_model->fetch('subjects', [], [], '', true);
+        $data['teachers'] = $this->mydb_model->fetch('teachers', [], [], '', true);
+        $data['students'] = $this->mydb_model->fetch('students', [], [], '', true);
         $this->admin('admin/dashboard', $data);
     }
 
@@ -1065,7 +1065,7 @@ class AdminController extends MY_Controller {
     }
 
     public function getSchoolYears() {
-         $data = $this->mydb_model->fetch('school_years', ['is_deleted'=>0]);
+         $data = $this->mydb_model->fetch('school_years', ['is_deleted'=>0], [], '', false, '*', 'school_year', 'DESC');
 
         echo json_encode($data);
     }
@@ -1323,7 +1323,7 @@ class AdminController extends MY_Controller {
         $data['title'] = 'Admin Profile';
         $data['active'] = 'admin-profile';
         $data['user'] = $this->user;
-        $user = $this->mydb_model->fetch('users', ['id'=>$this->user->id])[0];
+        $user = $this->mydb_model->fetch('users', ['id'=>$this->user->user_id])[0];
         $data['user']->username = $user->username;
         $data['user']->password = $user->password;
         $this->admin('admin/profile', $data);

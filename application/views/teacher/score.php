@@ -57,8 +57,9 @@
                   	<label for="grading_id" class="col-sm-3 control-label">Period</label>
 
                   	<div class="col-sm-9">
-                    	<select class="form-control" id="grading_id" name="grading_id" required>
+                    	<select class="form-control" id="grading_id" name="grading_id" style="width:100%" required>
                       </select>
+                      <label id="grading_id-error" class="error" for="grading_id"></label>
                   	</div>
                 </div>
                 <div class="form-group has-feedback">
@@ -94,7 +95,7 @@
                     <label for="edit_grading_id" class="col-sm-3 control-label">Period</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_grading_id" name="edit_grading_id" required>
+                      <select class="form-control" id="edit_grading_id" name="edit_grading_id" style="width:100%" required>
                       </select>
                     </div>
                 </div>

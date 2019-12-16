@@ -58,21 +58,24 @@ $(function(){
             async: false,
             dataType: 'json'
         }).responseJSON;
-        var subjecthtml = '';
+        var subjecthtml = '<option value="" selected disabled>Select</option>';
         $.each(subjects, function(sub, subject){
             subjecthtml += '<option value="'+subject.id+'">'+subject.subject_name+'</option>';
         });
         $('#subject_id').html(subjecthtml);
-        var teacherhtml = '';
+        $('#subject_id').select2();
+        var teacherhtml = '<option value="" selected disabled>Select</option>';
         $.each(teachers, function(tea, teacher){
             teacherhtml += '<option value="'+teacher.id+'">'+teacher.firstname+' '+teacher.lastname+'</option>';
         });
         $('#teacher_id').html(teacherhtml);
-        var yearhtml = '';
+        $('#teacher_id').select2();
+        var yearhtml = '<option value="" selected disabled>Select</option>';
         $.each(school_years, function(ye, year){
             yearhtml += '<option value="'+year.id+'">'+year.school_year+'</option>';
         });
         $('#school_year_id').html(yearhtml);
+        $('#school_year_id').select2();
     });
 
     //add admin form validation
@@ -169,6 +172,7 @@ $(function(){
                     }
                 });
                 $('#edit_subject_id').html(subjecthtml);
+                $('#edit_subject_id').select2();
                 var teacherhtml = '<option value="'+data.teacher_id+'" selected>'+data.firstname+' '+data.lastname+'</option>';
                 $.each(teachers, function(tea, teacher){
                     if (data.teacher_id !== teacher.id) {
@@ -176,6 +180,7 @@ $(function(){
                     }
                 });
                 $('#edit_teacher_id').html(teacherhtml);
+                $('#edit_teacher_id').select2();
                 var yearhtml = '<option value="'+data.school_year_id+'" selected>'+data.school_year+'</option>';
                 $.each(school_years, function(ye, year){
                     if (data.school_year_id !== year.id) {
@@ -183,6 +188,7 @@ $(function(){
                     }
                 });
                 $('#edit_school_year_id').html(yearhtml);
+                $('#edit_school_year_id').select2();
 			}
 		});
 	});

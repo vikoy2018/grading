@@ -13,6 +13,8 @@ class MY_Controller extends CI_Controller {
     }
     public function main($page = '', $data = '') {
         $this->load->view('main/header', $data);
+        $this->load->view('main/navbar', $data);
+        $this->load->view('main/banner', $data);
         $this->load->view($page, $data);
         $this->load->view('main/footer');
     }
@@ -29,6 +31,11 @@ class MY_Controller extends CI_Controller {
         $this->load->view('teacher/sidebar', $data);
         $this->load->view($page, $data);
         $this->load->view('teacher/footer');
+    }
+    public function mainlogin($page = '', $data = '') {
+        $this->load->view('main/login-header', $data);
+        $this->load->view($page, $data);
+        $this->load->view('main/login-footer');
     }
       
 }

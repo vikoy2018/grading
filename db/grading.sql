@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 11, 2019 at 03:41 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.1.28
+-- Host: 127.0.0.1
+-- Generation Time: Dec 15, 2019 at 11:31 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -200,6 +200,26 @@ INSERT INTO `student_criteria_scores` (`id`, `criteria_score_id`, `student_id`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `student_grades`
+--
+
+CREATE TABLE `student_grades` (
+  `id` int(11) NOT NULL,
+  `subject_student_id` int(11) NOT NULL,
+  `grading_id` int(11) NOT NULL,
+  `grade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_grades`
+--
+
+INSERT INTO `student_grades` (`id`, `subject_student_id`, `grading_id`, `grade`) VALUES
+(8, 5, 3, 100);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `student_parents`
 --
 
@@ -328,7 +348,7 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `user_id`, `firstname`, `lastname`, `photo`, `created_on`, `is_deleted`) VALUES
-(5, 14, 'Neonita', 'Devierte', '', '2019-12-10', 0),
+(5, 14, 'Neonita', 'Devierte', '1576326659_11080850_904417189603886_4320294362270876652_o.jpg', '2019-12-10', 0),
 (6, 15, 'Tetai', 'Devierte', '', '2019-12-10', 0);
 
 -- --------------------------------------------------------
@@ -351,7 +371,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `usertype`, `username`, `password`, `is_deleted`) VALUES
 (1, 3, 'admin', '$2y$10$LUxzmO1J/KnMCSJ5JdLdter/LzDfADhzrJ3Lv/G0dQuiX/YhaT6QG', 0),
-(14, 2, 'teacher1', '$2y$10$n50HwchyZTE9v7INQfa6EOkRNnaD2NnHfumxIdJW0Zw//JXqYcm8m', 0),
+(14, 2, 'teacher', '$2y$10$O2kUKOmHgFhsD2.uFkro.uu2/rbNssuH8bRJ4HyMNCE0Qy/NRaPfu', 0),
 (15, 2, 'teacher2', '$2y$10$PvPfybtZzgZQTiGd9RVczO.UD4c6zcCNB9/YJzgrC/SnXzZOhD51i', 0),
 (16, 2, 'student1', '$2y$10$eDxrewF55JhufaLrbLERG.7JBZNAMl.UxP6HzAm74hIId3aNHkUJO', 0),
 (17, 2, 'student2', '$2y$10$6WQTFq5NqfRTk8YSGHkFB.Zw2Sd0Q8.TVTOEcfYG8dshsfaMyCu1G', 0),
@@ -402,6 +422,12 @@ ALTER TABLE `students`
 -- Indexes for table `student_criteria_scores`
 --
 ALTER TABLE `student_criteria_scores`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `student_grades`
+--
+ALTER TABLE `student_grades`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -491,6 +517,12 @@ ALTER TABLE `students`
 --
 ALTER TABLE `student_criteria_scores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `student_grades`
+--
+ALTER TABLE `student_grades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `student_parents`

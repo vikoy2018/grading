@@ -44,11 +44,12 @@ $(function(){
             async: false,
             dataType: 'json'
         }).responseJSON;
-        var gradinghtml = '';
+        var gradinghtml = '<option value="" selected disabled>Select</option>';
         $.each(gradings, function(gra, grading){
             gradinghtml += '<option value="'+grading.id+'">'+grading.period+'</option>';
         });
         $('#grading_id').html(gradinghtml);
+        $('#grading_id').select2();
     });
 
     //add admin form validation
@@ -128,6 +129,7 @@ $(function(){
                     }
                 });
                 $('#edit_grading_id').html(gradinghtml);
+                $('#edit_grading_id').select2();
 			}
 		});
 	});

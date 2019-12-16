@@ -70,6 +70,7 @@ $route['admin/logout'] = 'adminController/logout';
 
 $route['teacher'] = 'teacherLoginController';
 $route['teacher/dashboard'] = 'teacherController';
+$route['teacher/profile'] = 'teacherController/profile';
 $route['teacher/subjects'] = 'teacherController/subjects';
 $route['teacher/subjects/criterias/(:num)'] = 'teacherController/subjectCriterias/$1';
 $route['teacher/subjects/students/(:num)'] = 'teacherController/subjectStudents/$1';

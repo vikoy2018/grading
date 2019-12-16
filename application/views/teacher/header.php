@@ -10,6 +10,7 @@
   	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/dist/css/bootstrap.min.css">
   	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/AdminLTE.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/alertify/css/alertify.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/_all-skins.min.css">

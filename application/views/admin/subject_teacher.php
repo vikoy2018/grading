@@ -53,24 +53,27 @@
                   	<label for="subject_id" class="col-sm-3 control-label">Subject</label>
 
                   	<div class="col-sm-9">
-                    	<select class="form-control" id="subject_id" name="subject_id" required>
+                    	<select class="form-control" id="subject_id" name="subject_id" style="width:100%;" required>
                       </select>
+                      <label id="subject_id-error" class="error" for="subject_id"></label>
                   	</div>
                 </div>
                 <div class="form-group">
                     <label for="teacher_id" class="col-sm-3 control-label">Teacher</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="teacher_id" name="teacher_id" required>
+                      <select class="form-control" id="teacher_id" name="teacher_id" style="width:100%;" required>
                       </select>
+                      <label id="teacher_id-error" class="error" for="teacher_id"></label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="school_year_id" class="col-sm-3 control-label">School Year</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="school_year_id" name="school_year_id" required>
+                      <select class="form-control" id="school_year_id" name="school_year_id" style="width:100%;" required>
                       </select>
+                      <label id="school_year_id-error" class="error" for="school_year_id"></label>
                     </div>
                 </div>
           	</div>
@@ -99,7 +102,7 @@
                     <label for="edit_subject_id" class="col-sm-3 control-label">Subject</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_subject_id" name="edit_subject_id" required>
+                      <select class="form-control" id="edit_subject_id" name="edit_subject_id" style="width:100%;" required>
                       </select>
                     </div>
                 </div>
@@ -107,7 +110,7 @@
                     <label for="edit_teacher_id" class="col-sm-3 control-label">Teacher</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_teacher_id" name="edit_teacher_id" required>
+                      <select class="form-control" id="edit_teacher_id" name="edit_teacher_id" style="width:100%;" required>
                       </select>
                     </div>
                 </div>
@@ -115,7 +118,7 @@
                     <label for="edit_school_year_id" class="col-sm-3 control-label">School Year</label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_school_year_id" name="edit_school_year_id" required>
+                      <select class="form-control" id="edit_school_year_id" name="edit_school_year_id" style="width:100%;" required>
                       </select>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ $(function(){
     var yeartable = $('#yearTable').DataTable({
     	"processing": true, 
         "serverSide": true, 
-        "order": [[0, 'asc']], 
+        "order": [[0, 'desc']], 
  
         "ajax": {
             "url": base_url+"adminController/data_year",

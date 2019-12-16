@@ -1,6 +1,7 @@
 <div class="login-box">
   	<div class="login-logo">
-  	    <b>LOGO HERE</b>
+        <img src="<?php echo base_url('assets/img/logo.png'); ?>">
+  	    <b>EAST VISAYAN</b>
   	</div>
   
   	<div class="login-box-body">

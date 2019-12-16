@@ -21,7 +21,7 @@ $(function(){
         //Set column definition initialisation properties.
         "columnDefs": [
 	        { 
-	            "targets": [1], 
+	            "targets": [1, 2], 
 	            "orderable": false,
 	        },
         ],
@@ -29,6 +29,25 @@ $(function(){
             { data: "lastname",
                 render: function (data, type, row) {
                     return data+', '+row.firstname;
+                }
+            },
+            { data: "grades",
+                render: function (data, type, row) {
+                    if (data != null) {
+                        var classes = ['grade-primary', 'grade-secondary', 'grade-success', 'grade-info'];
+                        var new_data = data.split(',');
+                        var html = '';
+                        var fail = '';
+                        $.each(new_data, function(x, y){
+                            if (y < 75) {
+                                fail = 'grade-fail';
+                            }
+                            html += '<div class="student-grade '+classes[x]+' '+fail+'">'+y+'</div>';
+                        });
+                        return html;
+                    } else {
+                        return '';
+                    }
                 }
             },
 	        { data: "subject_student_id",
@@ -49,11 +68,12 @@ $(function(){
             async: false,
             dataType: 'json'
         }).responseJSON;
-        var gradinghtml = '';
+        var gradinghtml = '<option value="" selected disabled>Select</option>';
         $.each(gradings, function(gra, grading){
             gradinghtml += '<option value="'+grading.id+'">'+grading.period+'</option>';
         });
         $('#grading_id').html(gradinghtml);
+        $('#grading_id').select2();
     });
 
     //add admin form validation
@@ -73,10 +93,12 @@ $(function(){
     //add admin form submit
     $('#sheetForm').submit(function(e){
         e.preventDefault();
-        var grading_id = $('#grading_id').val();
-        var subject_student_id = $('input:hidden[name=subject_student_id]').val();
+        if($(this).valid()){
+            var grading_id = $('#grading_id').val();
+            var subject_student_id = $('input:hidden[name=subject_student_id]').val();
 
-        window.open(base_url + 'teacher/subjects/students/sheet/'+subject_student_id+'/'+grading_id, '_blank');
+            window.open(base_url + 'teacher/subjects/students/sheet/'+subject_student_id+'/'+grading_id, '_blank');
+        }
     });
    
 });

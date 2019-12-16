@@ -16,28 +16,28 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-aqua">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3><?php echo $users; ?></h3>
 
-                        <p>Today's Attendance</p>
+                        <p>Users</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-clock-o"></i>
+                        <i class="fa fa-users"></i>
                     </div>
-                    <a href="<?php echo base_url(); ?>admin/attendance" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3><?php echo $subjects; ?></h3>
 
-                        <p>Members</p>
+                        <p>Subjects</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-users"></i>
+                        <i class="fa fa-book"></i>
                     </div>
-                    <a href="<?php echo base_url(); ?>admin/members" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -45,28 +45,28 @@
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-yellow">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3><?php echo $teachers; ?></h3>
 
-                        <p>Events</p>
+                        <p>Teachers</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa fa-user-secret"></i>
                     </div>
-                    <a href="<?php echo base_url(); ?>admin/events" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
            
             <div class="col-lg-3 col-xs-6">
                 <div class="small-box bg-red">
                     <div class="inner">
-                        <h3>0</h3>
+                        <h3><?php echo $students; ?></h3>
 
-                        <p>Total Attendance</p>
+                        <p>Students</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-file-text-o"></i>
+                        <i class="fa fa-id-card"></i>
                     </div>
-                    <a href="<?php echo base_url(); ?>admin/attendance" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             

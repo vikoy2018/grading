@@ -3,6 +3,7 @@
 <script src="<?php echo base_url(); ?>assets/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/select2/dist/js/select2.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/adminlte.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/alertify/js/alertify.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jquery.validate.min.js"></script>
@@ -11,6 +12,11 @@
 	if ($active == 'teacher-subjects') {
 		?>
 		<script src="<?php echo base_url(); ?>assets/js/teacher/subject.js"></script>
+		<?php
+	}
+	if ($active == 'teacher-profile') {
+		?>
+		<script src="<?php echo base_url(); ?>assets/js/teacher/profile.js"></script>
 		<?php
 	}	
 	if ($active == 'teacher-criteria') {

@@ -14,7 +14,7 @@ class AdminLoginController extends MY_Controller {
     public function index() {
     	$data['title'] = 'Admin Login';
         $data['active'] = 'admin-login';
-    	$this->main('main/adminlogin', $data);
+    	$this->mainlogin('main/adminlogin', $data);
     }
     public function login() {
     	$output = ['error'=>false];

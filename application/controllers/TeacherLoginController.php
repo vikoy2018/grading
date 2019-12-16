@@ -14,7 +14,7 @@ class TeacherLoginController extends MY_Controller {
     public function index() {
     	$data['title'] = 'Teacher Login';
         $data['active'] = 'teacher-login';
-    	$this->main('main/teacherlogin', $data);
+    	$this->mainlogin('main/teacherlogin', $data);
     }
     public function login() {
     	$output = ['error'=>false];

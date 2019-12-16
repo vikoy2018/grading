@@ -55,7 +55,7 @@
                   	<label for="student_id" class="col-sm-3 control-label">Student</label>
 
                   	<div class="col-sm-9">
-                    	<select class="form-control" id="student_id" name="student_id" required>
+                    	<select class="form-control" id="student_id" name="student_id" style="width:100%;" required>
                       </select>
                   	</div>
                 </div>

@@ -117,3 +117,53 @@ label.error {
 .period-title {
     font-size: 16px;
 }
+
+.color-red {
+	color: #ff0000;
+}
+
+.grade-primary {
+	background: #007bff;
+}
+
+.grade-secondary {
+	background: #6c757d;
+}
+
+.grade-success {
+	background: #28a745;
+}
+
+.grade-info {
+	background: #17a2b8;
+}
+
+#studentTable tbody tr td > div.student-grade {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.student-grade-header {
+    color: #fff;
+    padding: 2px 4px;
+    margin-right: 5px;
+}
+
+.grade-fail {
+	color: #ff0000 !important;
+}
+
+.sheet-buttons {
+    float: right;
+}
+
+.hideme {
+	display: none;
+}
+
+.login-logo img {
+    width: 100%;
+    max-width: 60px;
+}
