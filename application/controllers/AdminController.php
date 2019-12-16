@@ -414,7 +414,7 @@ class AdminController extends MY_Controller {
         $user = [
             'username' => $this->input->post('username'),
             'password' => password_hash('123', PASSWORD_DEFAULT),
-            'usertype' => 2,
+            'usertype' => 0,
             'is_deleted' => 0,
         ];
 
@@ -576,7 +576,7 @@ class AdminController extends MY_Controller {
         $user = [
             'username' => $this->input->post('username'),
             'password' => password_hash('123', PASSWORD_DEFAULT),
-            'usertype' => 2,
+            'usertype' => 1,
             'is_deleted' => 0,
         ];
 

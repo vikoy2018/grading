@@ -18,6 +18,20 @@ class MY_Controller extends CI_Controller {
         $this->load->view($page, $data);
         $this->load->view('main/footer');
     }
+    public function student($page = '', $data = '') {
+        $this->load->view('main/student/header', $data);
+        $this->load->view('main/student/navbar', $data);
+        $this->load->view('main/student/banner', $data);
+        $this->load->view($page, $data);
+        $this->load->view('main/student/footer');
+    }
+    public function parent($page = '', $data = '') {
+        $this->load->view('main/parent/header', $data);
+        $this->load->view('main/parent/navbar', $data);
+        $this->load->view('main/parent/banner', $data);
+        $this->load->view($page, $data);
+        $this->load->view('main/parent/footer');
+    }
     public function admin($page = '', $data = '') {
         $this->load->view('admin/header', $data);
         $this->load->view('admin/navbar', $data);

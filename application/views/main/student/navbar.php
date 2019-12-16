@@ -20,7 +20,8 @@
               <div class="mu-header-top-right">
                 <nav>
                   <ul class="mu-top-social-nav">
-                    <li><a href="<?php echo base_url('login'); ?>"><span class="fa fa-sign-in"></span> Login</a></li>
+                    <li><a href="<?php echo base_url('student/profile'); ?>"><span class="fa fa-user"></span> <?php echo $user->firstname.' '.$user->lastname; ?></a></li>
+                    <li><a href="<?php echo base_url('student/logout'); ?>"><span class="fa fa-sign-out"></span> Logout</a></li>
                   </ul>
                 </nav>
               </div>
@@ -51,9 +52,10 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url(); ?>">Home</a></li>                      
-          <li class="<?php echo $active == 'gallery' ? 'active' : ''; ?>"><a href="<?php echo base_url('gallery'); ?>">Gallery</a></li>           
-          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
+          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url('student'); ?>">Home</a></li>                      
+          <li class="<?php echo $active == 'gallery' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/gallery'); ?>">Gallery</a></li>           
+          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/contact'); ?>">Contact</a></li>
+          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/grades'); ?>">My Grades</a></li>
         </ul>                     
       </div><!--/.nav-collapse -->        
     </div>     

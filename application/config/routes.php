@@ -53,6 +53,10 @@ $route['default_controller'] = 'mainController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['login'] = 'LoginController';
+$route['student'] = 'studentController';
+$route['student/logout'] = 'studentController/logout';
+
 $route['admin'] = 'adminLoginController';
 $route['admin/dashboard'] = 'adminController';
 $route['admin/admins'] = 'adminController/admins';
@@ -76,5 +80,4 @@ $route['teacher/subjects/criterias/(:num)'] = 'teacherController/subjectCriteria
 $route['teacher/subjects/students/(:num)'] = 'teacherController/subjectStudents/$1';
 $route['teacher/subjects/criterias/scores/(:num)'] = 'teacherController/criteriaScores/$1';
 $route['teacher/subjects/students/sheet/(:num)/(:num)'] = 'teacherController/studentSheet/$1/$2';
-
 $route['teacher/logout'] = 'teacherController/logout';

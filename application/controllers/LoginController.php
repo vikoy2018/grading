@@ -5,25 +5,23 @@ class LoginController extends MY_Controller {
     public function __construct(){
         parent::__construct();
 
-        // if($this->session->userdata('user')){
-        //     $user = $this->session->userdata('user');
-        //     if ($user->usertype == 0) {
-        //         redirect('admin/home');
-        //     }
+        if($this->session->userdata('user')){
+            $user = $this->session->userdata('user');
+            if ($user->usertype == 0) {
+                redirect('student');
+            }
 
-        //     if ($user->usertype == 1) {
-        //         redirect('staff/home');
-        //     }
-            
-        // }
+            if ($user->usertype == 1) {
+                redirect('parent');
+            }
+        }
 
     }
 
     public function index() {
-        echo "test";
-        // $data['title'] = 'Admin Login';
-        // $data['active'] = 'login';
-        // $this->main('main/login', $data);
+        $data['title'] = 'Login';
+        $data['active'] = 'login';
+        $this->main('main/login', $data);
     }
     public function login(){
         $output = ['error'=>false];
@@ -35,13 +33,26 @@ class LoginController extends MY_Controller {
 
         if($user){
             $user = $user[0];
-            // check password
-            if(password_verify($password, $user->password)){
-                $this->session->set_userdata('user', $user);
-                $output['usertype'] = $user->usertype;
+            // check if login is a student/parent
+            if ($user->usertype == 0 || $user->usertype == 1) {
+                // check password
+                if(password_verify($password, $user->password)){
+                    if ($user->usertype == 0) {
+                        $output['user'] = 'student';
+                        $student = $this->mydb_model->fetch('students', ['user_id'=>$user->id])[0];
+                        $this->session->set_userdata('user', $student);
+                    } else {
+                        $output['user'] = 'parent';
+                        $parent = $this->mydb_model->fetch('parents', ['user_id'=>$user->id])[0];
+                        $this->session->set_userdata('user', $parent);
+                    }
+                } else {
+                    $output['error'] = true;
+                    $output['message'] = 'Incorrect Password';  
+                }
             } else {
                 $output['error'] = true;
-                $output['message'] = 'Incorrect Password';  
+                $output['message'] = 'Username not found'; 
             }
         } else{
             $output['error'] = true;
@@ -51,7 +62,4 @@ class LoginController extends MY_Controller {
 
     }
 
-    public function test() {
-        echo password_hash('student', PASSWORD_DEFAULT);
-    }
 }
