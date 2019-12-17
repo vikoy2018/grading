@@ -1,4 +1,4 @@
-<section class="login-section">
+<section class="login-section page-content">
     <div class="login-box">
         <div class="login-box-body">
             <p class="login-box-msg">Login to start your session</p>

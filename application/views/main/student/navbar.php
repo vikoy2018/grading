@@ -8,11 +8,11 @@
               <div class="mu-header-top-left">
                 <div class="mu-top-email">
                   <i class="fa fa-envelope"></i>
-                  <span>info@markups.io</span>
+                  <span>eastvisayan2019@gmail.com</span>
                 </div>
                 <div class="mu-top-phone">
                   <i class="fa fa-phone"></i>
-                  <span>(568) 986 652</span>
+                  <span>09264837405</span>
                 </div>
               </div>
             </div>
@@ -52,10 +52,9 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url('student'); ?>">Home</a></li>                      
-          <li class="<?php echo $active == 'gallery' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/gallery'); ?>">Gallery</a></li>           
+          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url('student'); ?>">Home</a></li>                                 
           <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/contact'); ?>">Contact</a></li>
-          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/grades'); ?>">My Grades</a></li>
+          <li class="<?php echo $active == 'student-grades' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/grades'); ?>">My Grades</a></li>
         </ul>                     
       </div><!--/.nav-collapse -->        
     </div>     

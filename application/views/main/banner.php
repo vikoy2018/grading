@@ -9,7 +9,6 @@ if ($active == 'home') {
         <h4>Welcome To East Visayan</h4>
         <span></span>
         <h2>We Will Help You To Learn</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
       </div>
     </div>
     
@@ -17,20 +16,18 @@ if ($active == 'home') {
       <div class="mu-slider-img slider2">
       </div>
       <div class="mu-slider-content">
-        <h4>Premiumu Quality Free Template</h4>
+        <h4>Quality Teachers</h4>
         <span></span>
-        <h2>Best Education Template Ever</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
+        <h2>Learn from our professional teachers</h2>
       </div>
     </div>
     <div class="mu-slider-single">
       <div class="mu-slider-img slider3">
       </div>
       <div class="mu-slider-content">
-        <h4>Exclusivly For Education</h4>
+        <h4>Online Grading System</h4>
         <span></span>
-        <h2>Education For Everyone</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
+        <h2>You can view your grades online</h2>
       </div>
     </div>  
   </section>

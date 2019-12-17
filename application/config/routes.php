@@ -54,7 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'LoginController';
+
 $route['student'] = 'studentController';
+$route['student/grades'] = 'studentController/grades';
+$route['student/grades/(:num)'] = 'studentController/grades/$1';
 $route['student/logout'] = 'studentController/logout';
 
 $route['admin'] = 'adminLoginController';
