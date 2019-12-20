@@ -363,10 +363,10 @@ class AdminController extends MY_Controller {
 
     public function data_student() {
         $columns = [
-            'users.username', 'users.password', 'students.firstname', 'students.lastname', 'students.photo', 'parents.firstname'
+            'students.school_id', 'users.username', 'users.password', 'students.firstname', 'students.lastname', 'students.photo', 'parents.firstname'
         ];
         $where = ['students.is_deleted'=>0];
-        $select = 'students.id AS student_id, students.firstname AS student_firstname, students.lastname AS student_lastname, students.photo, users.username, users.password, parents.firstname AS parent_firstname, parents.lastname AS parent_lastname';
+        $select = 'students.id AS student_id, students.firstname AS student_firstname, students.lastname AS student_lastname, students.photo, students.school_id, users.username, users.password, parents.firstname AS parent_firstname, parents.lastname AS parent_lastname';
         $join = [
             'users'=>'users.id=students.user_id',
             'student_parents'=>'student_parents.student_id=students.id',
@@ -374,7 +374,7 @@ class AdminController extends MY_Controller {
         ];
         $join_type = 'LEFT';
         $search_columns = [
-            'users.username', 'firstname', 'lastname'
+            'students.school_id', 'users.username', 'firstname', 'lastname'
         ];
 
         $limit = $this->input->post('length');
@@ -423,6 +423,7 @@ class AdminController extends MY_Controller {
         if ($user_id) {
             $student = [
                 'user_id' => $user_id,
+                'school_id' => $this->input->post('school_id'),
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),
                 'created_on' => date('Y-m-d'),
@@ -456,7 +457,7 @@ class AdminController extends MY_Controller {
     public function getStudentById() {
         $id = $this->input->post('id');
        
-        $data = $this->mydb_model->fetch('students', ['students.id'=>$id], ['users'=>'users.id=students.user_id'], 'LEFT', false, 'students.id AS student_id, user_id, firstname, lastname, username');
+        $data = $this->mydb_model->fetch('students', ['students.id'=>$id], ['users'=>'users.id=students.user_id'], 'LEFT', false, 'students.id AS student_id, user_id, school_id, firstname, lastname, username');
 
         echo json_encode($data);
     }
@@ -475,6 +476,7 @@ class AdminController extends MY_Controller {
 
         if ($updated_user) {
             $student = [
+                'school_id' => $this->input->post('school_id'),
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),
             ];
@@ -527,16 +529,16 @@ class AdminController extends MY_Controller {
 
     public function data_parent() {
         $columns = [
-            'users.username', 'users.password', 'firstname', 'lastname'
+            'users.username', 'users.password', 'firstname', 'lastname', 'phone'
         ];
         $where = ['parents.is_deleted'=>0];
-        $select = 'parents.id as parent_id, parents.firstname, parents.lastname, parents.photo, users.username, users.password';
+        $select = 'parents.id as parent_id, parents.firstname, parents.lastname, parents.phone, parents.photo, users.username, users.password';
         $join = [
             'users'=>'users.id=parents.user_id',
         ];
         $join_type = 'LEFT';
         $search_columns = [
-            'users.username', 'firstname', 'lastname'
+            'users.username', 'firstname', 'lastname', 'phone'
         ];
 
         $limit = $this->input->post('length');
@@ -587,6 +589,7 @@ class AdminController extends MY_Controller {
                 'user_id' => $user_id,
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),
+                'phone' => $this->input->post('phone'),
                 'created_on' => date('Y-m-d'),
                 'is_deleted' => 0
             ];
@@ -618,7 +621,7 @@ class AdminController extends MY_Controller {
     public function getParentById() {
         $id = $this->input->post('id');
        
-        $data = $this->mydb_model->fetch('parents', ['parents.id'=>$id], ['users'=>'users.id=parents.user_id'], 'LEFT', false, 'parents.id AS parent_id, user_id, firstname, lastname, username');
+        $data = $this->mydb_model->fetch('parents', ['parents.id'=>$id], ['users'=>'users.id=parents.user_id'], 'LEFT', false, 'parents.id AS parent_id, user_id, firstname, lastname, phone, username');
 
         echo json_encode($data);
     }
@@ -639,6 +642,7 @@ class AdminController extends MY_Controller {
             $parent = [
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),
+                'phone' => $this->input->post('phone'),
             ];
 
             if (!empty($_FILES['file']['name'])) {

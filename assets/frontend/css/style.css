@@ -2129,6 +2129,16 @@ img {
   right: 0;
 }
 
+#print_grade {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.contact-image {
+  width: 100%;
+}
+
 /*==================
  RESPONSIVE DESIGN
 ====================*/

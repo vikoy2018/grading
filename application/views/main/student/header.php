@@ -28,6 +28,9 @@
     <!-- Custom Style -->  
     <link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet">  
 
+    <!-- Print Style -->  
+    <link href="<?php echo base_url('assets/css/print.css'); ?>" rel="stylesheet" media="print">  
+
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>

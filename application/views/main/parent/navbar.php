@@ -1,4 +1,4 @@
-<header id="mu-header">
+<header id="mu-header" class="noprint">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -8,11 +8,11 @@
               <div class="mu-header-top-left">
                 <div class="mu-top-email">
                   <i class="fa fa-envelope"></i>
-                  <span>info@markups.io</span>
+                  <span>eastvisayan2019@gmail.com</span>
                 </div>
                 <div class="mu-top-phone">
                   <i class="fa fa-phone"></i>
-                  <span>(568) 986 652</span>
+                  <span>09264837405</span>
                 </div>
               </div>
             </div>
@@ -20,7 +20,8 @@
               <div class="mu-header-top-right">
                 <nav>
                   <ul class="mu-top-social-nav">
-                    <li><a href="<?php echo base_url('login'); ?>"><span class="fa fa-sign-in"></span> Login</a></li>
+                    <li><a href="<?php echo base_url('parent/profile'); ?>"><span class="fa fa-user"></span> <?php echo $user->firstname.' '.$user->lastname; ?></a></li>
+                    <li><a href="<?php echo base_url('parent/logout'); ?>"><span class="fa fa-sign-out"></span> Logout</a></li>
                   </ul>
                 </nav>
               </div>
@@ -32,7 +33,7 @@
   </div>
 </header>
 
-<section id="mu-menu">
+<section id="mu-menu" class="noprint">
   <nav class="navbar navbar-default" role="navigation">  
     <div class="container">
       <div class="navbar-header">
@@ -51,9 +52,20 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url(); ?>">Home</a></li>                      
-          <li class="<?php echo $active == 'gallery' ? 'active' : ''; ?>"><a href="<?php echo base_url('gallery'); ?>">Gallery</a></li>           
-          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('contact'); ?>">Contact</a></li>
+          <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url('parent'); ?>">Home</a></li>                                 
+          <li class="<?php echo $active == 'parent-contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('parent/contact'); ?>">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Grades <span class="fa fa-angle-down"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <?php
+                foreach ($students as $student) {
+                  ?>
+                  <li><a href="<?php echo base_url(); ?>parent/grade/<?php echo $student->student_id; ?>"><?php echo $student->firstname.' '.$student->lastname; ?></a></li> 
+                  <?php
+                } 
+              ?>                
+            </ul>
+          </li> 
         </ul>                     
       </div><!--/.nav-collapse -->        
     </div>     

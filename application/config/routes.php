@@ -55,10 +55,19 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'LoginController';
 
+$route['contact'] = 'mainController/contact';
+
 $route['student'] = 'studentController';
 $route['student/grades'] = 'studentController/grades';
 $route['student/grades/(:num)'] = 'studentController/grades/$1';
+$route['student/contact'] = 'studentController/contact';
 $route['student/logout'] = 'studentController/logout';
+
+$route['parent'] = 'parentController';
+$route['parent/grade/(:num)'] = 'parentController/grades/$1';
+$route['parent/grade/(:num)/(:num)'] = 'parentController/grades/$1/$2';
+$route['parent/contact'] = 'parentController/contact';
+$route['parent/logout'] = 'parentController/logout';
 
 $route['admin'] = 'adminLoginController';
 $route['admin/dashboard'] = 'adminController';

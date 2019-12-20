@@ -1,4 +1,4 @@
-<header id="mu-header">
+<header id="mu-header" class="noprint">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -20,7 +20,7 @@
               <div class="mu-header-top-right">
                 <nav>
                   <ul class="mu-top-social-nav">
-                    <li><a href="<?php echo base_url('student/profile'); ?>"><span class="fa fa-user"></span> <?php echo $user->firstname.' '.$user->lastname; ?></a></li>
+                    <li><a href="<?php echo base_url('student/account'); ?>"><span class="fa fa-user"></span> <?php echo $user->firstname.' '.$user->lastname; ?></a></li>
                     <li><a href="<?php echo base_url('student/logout'); ?>"><span class="fa fa-sign-out"></span> Logout</a></li>
                   </ul>
                 </nav>
@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<section id="mu-menu">
+<section id="mu-menu" class="noprint">
   <nav class="navbar navbar-default" role="navigation">  
     <div class="container">
       <div class="navbar-header">
@@ -53,7 +53,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
           <li class="<?php echo $active == 'home' ? 'active' : ''; ?>"><a href="<?php echo base_url('student'); ?>">Home</a></li>                                 
-          <li class="<?php echo $active == 'contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/contact'); ?>">Contact</a></li>
+          <li class="<?php echo $active == 'student-contact' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/contact'); ?>">Contact</a></li>
           <li class="<?php echo $active == 'student-grades' ? 'active' : ''; ?>"><a href="<?php echo base_url('student/grades'); ?>">My Grades</a></li>
         </ul>                     
       </div><!--/.nav-collapse -->        

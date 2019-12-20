@@ -1,4 +1,4 @@
-	<footer id="mu-footer">
+	<footer id="mu-footer" class="noprint">
 	<!-- start footer bottom -->
 	<div class="mu-footer-bottom">
 	  <div class="container">
@@ -31,14 +31,14 @@
   	<script src="<?php echo base_url('assets/frontend/js/custom.js'); ?>"></script> 
 
 	<?php
-		if ($active == 'login') {
-			?>
-			<script src="<?php echo base_url('assets/js/main/login.js'); ?>"></script> 
-			<?php
-		}
 		if ($active == 'student-grades') {
 			?>
 			<script src="<?php echo base_url('assets/js/main/grade.js'); ?>"></script> 
+			<?php
+		}
+		if ($active == 'student-contact') {
+			?>
+			<script src="<?php echo base_url('assets/js/main/student-contact.js'); ?>"></script> 
 			<?php
 		}
 	?>

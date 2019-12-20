@@ -31,6 +31,7 @@ $(function(){
             },
             { data: "firstname" },
             { data: "lastname" },
+            { data: "phone" },
             { data: "photo",
                 render: function (data, type, row) {
                     var link = '';
@@ -62,6 +63,9 @@ $(function(){
             },
             lastname: {
                 required: true
+            }, 
+            phone: {
+                required: true
             },        
         },
         messages: {
@@ -73,7 +77,10 @@ $(function(){
             },
             lastname: {
                 required: 'Please input lastname'
-            },    
+            },  
+            phone: {
+                required: 'Please input number'
+            },   
         }
     });
 
@@ -84,6 +91,7 @@ $(function(){
             var username = $('#username').val();
             var firstname = $('#firstname').val();
             var lastname = $('#lastname').val();
+            var phone = $('#phone').val();
 
             var formdata = new FormData();
             if (document.getElementById('photo').files.length > 0) {
@@ -92,6 +100,7 @@ $(function(){
             formdata.append('username', username);
             formdata.append('firstname', firstname);
             formdata.append('lastname', lastname);
+            formdata.append('phone', phone);
 			$.ajax({
 				type: "POST",
 				url: base_url+'adminController/addParent',
@@ -136,6 +145,7 @@ $(function(){
                 $('#edit_username').val(data.username);
                 $('#edit_firstname').val(data.firstname);
                 $('#edit_lastname').val(data.lastname);
+                $('#edit_phone').val(data.phone);
                 $('#userid').val(data.user_id);
 			}
 		});
@@ -147,6 +157,7 @@ $(function(){
         var username = $('#edit_username').val();
         var firstname = $('#edit_firstname').val();
         var lastname = $('#edit_lastname').val();
+        var phone = $('#edit_phone').val();
         var userid = $('input:hidden[name=userid]').val();
         var parentid = $('input:hidden[name=parentid]').val();
 
@@ -157,6 +168,7 @@ $(function(){
         formdata.append('username', username);
         formdata.append('firstname', firstname);
         formdata.append('lastname', lastname);
+        formdata.append('phone', phone);
         formdata.append('userid', userid);
         formdata.append('parentid', parentid);
 		$.ajax({

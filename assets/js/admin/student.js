@@ -18,11 +18,12 @@ $(function(){
         //Set column definition initialisation properties.
         "columnDefs": [
 	        { 
-	            "targets": [1, 4, 6], 
+	            "targets": [2, 5, 7], 
 	            "orderable": false,
 	        },
         ],
         "columns": [
+            { data: "school_id" },
             { data: "username" },
             { data: "password",
                 render: function (data, type, row) {
@@ -63,6 +64,9 @@ $(function(){
     //add admin form validation
 	$('#studentForm').validate({
         rules: {
+            school_id: {
+                required: true
+            },
             username: {
                 required: true
             },
@@ -74,6 +78,9 @@ $(function(){
             },        
         },
         messages: {
+            school_id: {
+                required: "Please input student id"
+            },
         	username: {
                 required: 'Please input username'
             },
@@ -90,6 +97,7 @@ $(function(){
 	$('#studentForm').submit(function(e){
 		e.preventDefault();
 		if($(this).valid()){
+            var school_id = $('#school_id').val();
             var username = $('#username').val();
             var firstname = $('#firstname').val();
             var lastname = $('#lastname').val();
@@ -98,6 +106,7 @@ $(function(){
             if (document.getElementById('photo').files.length > 0) {
                 formdata.append('file', document.getElementById('photo').files[0]);
             }
+            formdata.append('school_id', school_id);
             formdata.append('username', username);
             formdata.append('firstname', firstname);
             formdata.append('lastname', lastname);
@@ -142,6 +151,7 @@ $(function(){
                 $('#loader').hide();
                 var data = data[0]; 
                 $('#studentid').val(data.student_id);
+                $('#edit_school_id').val(data.school_id);
                 $('#edit_username').val(data.username);
                 $('#edit_firstname').val(data.firstname);
                 $('#edit_lastname').val(data.lastname);
@@ -153,6 +163,7 @@ $(function(){
 	//edit event form submit
 	$('#editStudentForm').submit(function(e){
 		e.preventDefault();
+        var school_id = $('#edit_school_id').val();
         var username = $('#edit_username').val();
         var firstname = $('#edit_firstname').val();
         var lastname = $('#edit_lastname').val();
@@ -163,6 +174,7 @@ $(function(){
         if (document.getElementById('edit_photo').files.length > 0) {
             formdata.append('file', document.getElementById('edit_photo').files[0]);
         }
+        formdata.append('school_id', school_id);
         formdata.append('username', username);
         formdata.append('firstname', firstname);
         formdata.append('lastname', lastname);

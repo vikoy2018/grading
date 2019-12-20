@@ -22,6 +22,7 @@
                     <div class="box-body">
                         <table id="studentTable" class="table table-bordered table-striped dt-responsive nowrap">
                             <thead>
+                                <th>Student ID</th>
                                 <th>Username</th>
                                 <th>Password</th>
                                 <th>Firstname</th>
@@ -53,6 +54,13 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" id="studentForm">
+                <div class="form-group">
+                    <label for="school_id" class="col-sm-3 control-label">Student ID</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="school_id" name="school_id" required>
+                    </div>
+                </div>
                 <div class="form-group">
                   	<label for="username" class="col-sm-3 control-label">Username</label>
 
@@ -104,6 +112,13 @@
             	<form class="form-horizontal" id="editStudentForm">
             	<input type="hidden" id="studentid" name="studentid">
                 <input type="hidden" id="userid" name="userid">
+                <div class="form-group">
+                    <label for="edit_school_id" class="col-sm-3 control-label">Student ID</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_school_id" name="edit_school_id" required>
+                    </div>
+                </div>
                 <div class="form-group">
                   	<label for="edit_username" class="col-sm-3 control-label">Username</label>
 

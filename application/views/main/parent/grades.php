@@ -1,5 +1,6 @@
 <section class="grade-section page-content">
     <div class="container">
+        <span id="student_id" data-value="<?php echo $mystudent->id; ?>"></span>
         <div class="grader-div">
             <div class="grade-header">
                 <div class="grade-logo1">
@@ -35,13 +36,13 @@
                 <table>
                     <tr>
                         <td>Student ID No.:</td>
-                        <td><?php echo $user->school_id; ?></td>
+                        <td><?php echo $mystudent->school_id; ?></td>
                         <td>School Year:</td>
                         <td><?php echo $school_year->school_year; ?></td>
                     </tr>
                     <tr>
                         <td>Student Name:</td>
-                        <td><?php echo $user->firstname.' '.$user->lastname; ?></td>
+                        <td><?php echo $mystudent->firstname.' '.$mystudent->lastname; ?></td>
                         <td></td>
                         <td></td>
                     </tr>

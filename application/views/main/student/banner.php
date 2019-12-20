@@ -9,7 +9,6 @@ if ($active == 'home') {
         <h4>Welcome To East Visayan</h4>
         <span></span>
         <h2>We Will Help You To Learn</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
       </div>
     </div>
     
@@ -17,20 +16,18 @@ if ($active == 'home') {
       <div class="mu-slider-img slider2">
       </div>
       <div class="mu-slider-content">
-        <h4>Premiumu Quality Free Template</h4>
+        <h4>Quality Teachers</h4>
         <span></span>
-        <h2>Best Education Template Ever</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
+        <h2>Learn from our professional teachers</h2>
       </div>
     </div>
     <div class="mu-slider-single">
       <div class="mu-slider-img slider3">
       </div>
       <div class="mu-slider-content">
-        <h4>Exclusivly For Education</h4>
+        <h4>Online Grading System</h4>
         <span></span>
-        <h2>Education For Everyone</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet error eius reiciendis eum sint unde eveniet deserunt est debitis corporis temporibus recusandae accusamus.</p>
+        <h2>You can view your grades online</h2>
       </div>
     </div>  
   </section>
@@ -41,19 +38,19 @@ if ($active == 'home') {
         <div class="col-lg-12 col-md-12">
           <div class="mu-service-area">
             <div class="mu-service-single">
-              <span class="fa fa-book"></span>
-              <h3>Learn Online</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <span class="fa fa-tasks"></span>
+              <h3>Online Grades</h3>
+              <p>Students and parents can view the grades online</p>
             </div>
             <div class="mu-service-single">
               <span class="fa fa-users"></span>
-              <h3>Expert Teachers</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <h3>Quality Teachers</h3>
+              <p>Learn for our well experience teachers that provide quality education</p>
             </div>
             <div class="mu-service-single">
               <span class="fa fa-table"></span>
-              <h3>Best Classrooms</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <h3>Best Environment</h3>
+              <p>Its best to learn if your environment provides excitement and happiness.</p>
             </div>
           </div>
         </div>
@@ -63,7 +60,7 @@ if ($active == 'home') {
   <?php
 } else {
   ?>
-  <section id="mu-page-breadcrumb">
+  <section id="mu-page-breadcrumb" class="noprint">
     <div class="container">
       <div class="row">
         <div class="col-md-12">

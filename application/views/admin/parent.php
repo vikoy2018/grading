@@ -26,6 +26,7 @@
                                 <th>Password</th>
                                 <th>Firstname</th>
                                 <th>Lastname</th>
+                                <th>Phone</th>
                                 <th>Photo</th>
                                 <th>Actions</th>
                             </thead>
@@ -72,6 +73,13 @@
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="lastname" name="lastname" required>
                   	</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-3 control-label">Phone</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="phone" name="phone" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
@@ -123,6 +131,13 @@
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="edit_lastname" name="edit_lastname" required>
                   	</div>
+                </div>
+                <div class="form-group">
+                    <label for="edit_phone" class="col-sm-3 control-label">Phone</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_phone" name="edit_phone" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_photo" class="col-sm-3 control-label">Photo</label>

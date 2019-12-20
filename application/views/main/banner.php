@@ -38,19 +38,19 @@ if ($active == 'home') {
         <div class="col-lg-12 col-md-12">
           <div class="mu-service-area">
             <div class="mu-service-single">
-              <span class="fa fa-book"></span>
-              <h3>Learn Online</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <span class="fa fa-tasks"></span>
+              <h3>Online Grades</h3>
+              <p>Students and parents can view the grades online</p>
             </div>
             <div class="mu-service-single">
               <span class="fa fa-users"></span>
-              <h3>Expert Teachers</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <h3>Quality Teachers</h3>
+              <p>Learn for our well experience teachers that provide quality education</p>
             </div>
             <div class="mu-service-single">
               <span class="fa fa-table"></span>
-              <h3>Best Classrooms</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima officiis, deleniti dolorem exercitationem praesentium, est!</p>
+              <h3>Best Environment</h3>
+              <p>Its best to learn if your environment provides excitement and happiness.</p>
             </div>
           </div>
         </div>

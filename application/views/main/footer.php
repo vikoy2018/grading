@@ -36,6 +36,11 @@
 			<script src="assets/js/main/login.js"></script> 
 			<?php
 		}
+		if ($active == 'contact') {
+			?>
+			<script src="assets/js/main/contact.js"></script> 
+			<?php
+		}
 	?>
 
   	</body>
