@@ -554,7 +554,7 @@ class TeacherController extends MY_Controller {
             $total_student_score = 0;
             foreach ($criteria_scores as $criteria_score) {
                 $total_criteria_score += $criteria_score->total_score;
-                $student_score = $this->mydb_model->fetch('student_criteria_scores', ['criteria_score_id'=>$criteria_score->id])[0];
+                $student_score = $this->mydb_model->fetch('student_criteria_scores', ['criteria_score_id'=>$criteria_score->id, 'student_id'=>$student_id])[0];
                 $total_student_score += $student_score->score;
             }
             $criteria_grade = ($total_student_score/$total_criteria_score)*$percentage;
@@ -566,7 +566,7 @@ class TeacherController extends MY_Controller {
         $student_grade = [
             'subject_student_id' => $subject_student_id,
             'grading_id' => $grading_id,
-            'grade' => $grade
+            'grade' => round($grade)
         ];
 
         $grade_added = $this->mydb_model->insert('student_grades', $student_grade);
@@ -618,7 +618,7 @@ class TeacherController extends MY_Controller {
             $total_student_score = 0;
             foreach ($criteria_scores as $criteria_score) {
                 $total_criteria_score += $criteria_score->total_score;
-                $student_score = $this->mydb_model->fetch('student_criteria_scores', ['criteria_score_id'=>$criteria_score->id])[0];
+                $student_score = $this->mydb_model->fetch('student_criteria_scores', ['criteria_score_id'=>$criteria_score->id, 'student_id'=>$student_id])[0];
                 $total_student_score += $student_score->score;
             }
             $criteria_grade = ($total_student_score/$total_criteria_score)*$percentage;
@@ -626,7 +626,7 @@ class TeacherController extends MY_Controller {
 
         }
 
-        $output['grade'] = $grade;
+        $output['grade'] = round($grade);
     
         echo json_encode($output);
     }

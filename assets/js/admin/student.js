@@ -54,11 +54,54 @@ $(function(){
             },
 	        { data: "student_id",
 	         	render: function (data, type, row) {
-                    return  '<button class="btn btn-success btn-sm btn-flat editstudent" value="'+data+'" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> Edit</button> <button class="btn btn-danger btn-sm btn-flat deletestudent" value="'+data+'" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i> Delete</button>';
+                    return  '<button class="btn btn-success btn-sm btn-flat editstudent" value="'+data+'" data-toggle="modal" data-target="#edit"><i class="fa fa-edit"></i> Edit</button> <button class="btn btn-danger btn-sm btn-flat deletestudent" value="'+data+'" data-toggle="modal" data-target="#delete"><i class="fa fa-trash"></i> Delete</button> <a href="'+base_url+'admin/form137/'+data+'" class="btn btn-primary btn-sm btn-flat" target="_blank"><i class="fa fa-file"></i> Form 137</a> <button class="btn btn-primary btn-sm btn-flat form138" value="'+data+'" data-toggle="modal" data-target="#form138"><i class="fa fa-file"></i> Form 138</button>';
                }
 	        },
  
        ],
+    });
+
+    // school year form
+    $(document).on('click', '.form138', function(){
+        var student_id = $(this).val();
+        $('#student_id').val(student_id);
+        var school_years = $.ajax({
+            type: 'GET',
+            url: base_url+'adminController/getSchoolYears',
+            async: false,
+            dataType: 'json'
+        }).responseJSON;
+        var yearhtml = '<option value="" selected disabled>Select</option>';
+        $.each(school_years, function(gra, school_year){
+            yearhtml += '<option value="'+school_year.id+'">'+school_year.school_year+'</option>';
+        });
+        $('#school_year_id').html(yearhtml);
+        $('#school_year_id').select2();
+    });
+
+    // school year form submit
+    $('#f138Form').validate({
+        rules: {
+            school_year_id: {
+                required: true
+            },      
+        },
+        messages: {
+            school_year_id: {
+                required: "Please select school year"
+            }, 
+        }
+    });
+
+    // school year form submit
+    $('#f138Form').submit(function(e){
+        e.preventDefault();
+        if($(this).valid()){
+            var school_year_id = $('#school_year_id').val();
+            var student_id = $('input:hidden[name=student_id]').val();
+
+            window.open(base_url + 'admin/form138/'+student_id+'/'+school_year_id, '_blank');
+        }
     });
 
     //add admin form validation

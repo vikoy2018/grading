@@ -520,6 +520,53 @@ class AdminController extends MY_Controller {
         echo json_encode($output);
     }
 
+    public function form138($student_id, $school_year_id) {
+        $data['title'] = 'Admin Form 138';
+        $data['active'] = 'admin-form138';
+        $data['user'] = $this->user;
+        $data['student'] = $this->mydb_model->fetch('students', ['id'=>$student_id])[0];
+        $data['school_year_data'] = $this->mydb_model->fetch('school_years', ['id'=>$school_year_id])[0];
+
+        $gradings = $this->mydb_model->fetch('gradings', ['is_deleted'=>0], [], '', false, '*', 'period', 'ASC');
+        $school_years = $this->mydb_model->fetch('subject_students', ['subject_students.student_id'=>$student_id], ['subject_teachers'=>'subject_teachers.id=subject_students.subject_teacher_id', 'school_years'=>'school_years.id=subject_teachers.school_year_id'], 'LEFT', false, 'school_year_id, school_year', 'school_years.school_year', 'DESC', '', 'school_year_id');
+        if ($school_year_id) {
+            $year_id = $school_year_id;
+            $data['school_year'] = $this->mydb_model->fetch('school_years', ['id'=>$year_id], [], '', false, 'school_years.id AS school_year_id', 'school_year');
+        } else {
+            $year_id = $school_years[0]->school_year_id;
+            $data['school_year'] = $school_years[0];
+        }
+        $subject_students = $this->mydb_model->fetch('subject_students', ['subject_students.student_id'=>$student_id, 'subject_teachers.school_year_id'=> $year_id], ['subject_teachers'=>'subject_teachers.id=subject_students.subject_teacher_id', 'school_years'=>'school_years.id=subject_teachers.school_year_id', 'subjects'=>'subjects.id=subject_teachers.subject_id'], 'LEFT', false, 'subject_students.id AS subject_student_id, subject_name, school_year');
+
+        $data['student_grades'] = [];
+
+        foreach ($subject_students as $subject_student) {
+            $student_grades = $subject_student;
+
+            $student_grades->grades = [];
+
+            foreach ($gradings as $grading) {
+                $student_grade_score = $this->mydb_model->fetch('student_grades', ['subject_student_id'=>$subject_student->subject_student_id, 'grading_id'=>$grading->id]);
+                if ($student_grade_score) {
+                    $grade = $student_grade_score[0]->grade;
+                } else {
+                    $grade = 0;
+                }
+                $student_grades->grades[] = $grade;
+            }
+
+            $data['student_grades'][] = $student_grades;
+        }
+
+        // print_r($data);
+
+        $this->load->view('admin/form138', $data);
+    }
+
+    public function form137($student_id, $school_year_id) {
+        echo $student_id;
+    }
+
     public function parents() {
         $data['title'] = 'Admin Parents';
         $data['active'] = 'admin-parents';

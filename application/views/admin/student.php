@@ -178,3 +178,33 @@
         </div>
     </div>
 </div>
+
+<!-- Form 138 -->
+<div class="modal fade" id="form138">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          	<div class="modal-header">
+            	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              		<span aria-hidden="true">&times;</span></button>
+            	<h4 class="modal-title"><b>Select School Year</b></h4>
+          	</div>
+          	<div class="modal-body">
+                <form class="form-horizontal" id="f138Form">
+                    <input type="hidden" id="student_id" name="student_id">
+                    <div class="form-group">
+                        <label for="school_year_id" class="col-sm-3 control-label">School Year</label>
+
+                        <div class="col-sm-9">
+                        <select class="form-control" id="school_year_id" name="school_year_id" style="width:100%;" required>
+                        </select>
+                        <label id="school_year_id-error" class="error" for="school_year_id"></label>
+                        </div>
+                    </div>
+          	</div>
+          	<div class="modal-footer">
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+            	<button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-arrow-right"></i> Go</button>
+          	</div>
+        </div>
+    </div>
+</div>

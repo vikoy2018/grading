@@ -167,3 +167,170 @@ label.error {
     width: 100%;
     max-width: 60px;
 }
+
+.form-header-title {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.form-header {
+	text-align: center;
+	line-height: 10px;
+}
+
+.school-name {
+    font-size: 14px;
+    color: #5a98ce;
+}
+
+.form-header-container {
+    position: relative;
+    margin-top: 30px;
+}
+
+.logo-right {
+    position: absolute;
+	top: -5px;
+    right: 50px;
+}
+
+.logo-right > div {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.logo-right div img {
+    width: 100%;
+    max-width: 55px;
+}
+
+.logo-left {
+    position: absolute;
+    top: -5px;
+    left: 50px;
+}
+
+.logo-left > div {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.logo-left div img {
+    width: 100%;
+    max-width: 55px;
+}
+
+.form-content, .transfer-div, .certificate-transfer, .cancel-transfer, .principal-signature {
+    margin-top: 30px;
+}
+
+.form-content-underline {
+	border-bottom: 1px solid #000;
+}
+
+.rp0 {
+	padding-right: 0 !important;
+}
+
+.lp0 {
+	padding-left: 0 !important;
+}
+
+.main-td {
+	width: 50%;
+	padding: 0 10px 10px 10px;
+}
+
+.form138-main-table, .grade-description, .form138-main-table2, .form-content table, .certificate-transfer table, .cancel-transfer table, .form-signatures table, .principal-signature table, .parent-signature table, .rating-table {
+    width: 100%;
+}
+
+.w20 {
+	width: 20%;
+}
+
+.w30 {
+	width: 30%;
+}
+
+.w25 {
+	width: 25%;
+}
+
+.w8 {
+	width: 8%;
+}
+
+.w40 {
+	width: 40%;
+}
+
+.lp10 {
+	padding-left: 10px;
+}
+
+.indented {
+	text-indent: 30px;
+}
+
+.border-bottom-solid {
+	border-bottom: 1px solid #000;
+}
+
+.form-signature-td {
+	width: 45%;
+}
+
+.form-signatures {
+    margin-top: 30px;
+}
+
+.form-138-body {
+	font-size: 11px;
+}
+
+.first-title {
+    font-weight: bold;
+	font-size: 12px;
+}
+
+.parent-signature-label {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.parent-signature table tr td {
+    padding-top: 10px;
+}
+
+.parent-signature {
+	padding: 0 40px;
+	margin-top: 100px;
+}
+
+.report-attendance {
+	margin-top: -100px;
+}
+
+.form138-main-table {
+    border: 2px solid #000;
+}
+
+.form138-main-table2 {
+	border: 2px solid #000;
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+.rating-table tr td, .grade-description tr td {
+	padding: 3px;
+}
+
+.middle-align {
+	vertical-align: middle !important;
+}
+
+.back-right {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

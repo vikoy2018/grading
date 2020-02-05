@@ -14,3 +14,21 @@
 .grade-logo2 {
 	width: 80px !important;
 }
+
+.logo-right {
+	top: 0;
+	right: 10px;
+}
+
+.logo-right div {
+    width: 55px !important;
+}
+
+.logo-left {
+	top: 0;
+	left: 10px;
+}
+
+.logo-left div {
+    width: 55px !important;
+}
