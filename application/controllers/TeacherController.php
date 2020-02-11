@@ -460,7 +460,7 @@ class TeacherController extends MY_Controller {
         $data['criterias'] = [];
 
         $subject_student = $this->mydb_model->fetch('subject_students', ['id'=>$subject_student_id])[0];
-        $criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_student->subject_teacher_id], [], '', false, '*', 'percentage', 'ASC');
+        $criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_student->subject_teacher_id, 'is_deleted'=>0], [], '', false, '*', 'percentage', 'ASC');
 
         $data['student'] = $this->mydb_model->fetch('students', ['id'=>$subject_student->student_id])[0];
         $data['subject'] = $this->mydb_model->fetch('subject_teachers', ['subject_teachers.id'=>$subject_student->subject_teacher_id], ['subjects'=>'subjects.id=subject_teachers.subject_id', 'school_years'=>'school_years.id=subject_teachers.school_year_id'], 'LEFT')[0];
@@ -469,7 +469,7 @@ class TeacherController extends MY_Controller {
         foreach ($criterias as $criteria) {
             $data['criterias'][$num] = $criteria;
 
-            $scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$criteria->id, 'grading_id'=>$grading_id]);
+            $scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$criteria->id, 'grading_id'=>$grading_id, 'is_deleted'=>0]);
             $score_num = 0;
             foreach ($scores as $score) {
                 $data['criterias'][$num]->scores[$score_num] = $score;
@@ -491,6 +491,10 @@ class TeacherController extends MY_Controller {
         if ($grade_exist) {
             $data['submitted'] = true;
         }
+
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
 
         $this->load->view('teacher/sheet', $data);
     }
@@ -544,12 +548,12 @@ class TeacherController extends MY_Controller {
         $subject_teacher_id = $subject_student->subject_teacher_id;
 
         // criterias
-        $subject_criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_teacher_id]);
+        $subject_criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_teacher_id, 'is_deleted'=>0]);
 
         // criteria score
         foreach ($subject_criterias as $subject_criteria) {
             $percentage = $subject_criteria->percentage;
-            $criteria_scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$subject_criteria->id]);
+            $criteria_scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$subject_criteria->id, 'is_deleted'=>0]);
             $total_criteria_score = 0;
             $total_student_score = 0;
             foreach ($criteria_scores as $criteria_score) {
@@ -608,12 +612,12 @@ class TeacherController extends MY_Controller {
         $subject_teacher_id = $subject_student->subject_teacher_id;
 
         // criterias
-        $subject_criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_teacher_id]);
+        $subject_criterias = $this->mydb_model->fetch('subject_criterias', ['subject_teacher_id'=>$subject_teacher_id, 'is_deleted'=>0]);
 
         // criteria score
         foreach ($subject_criterias as $subject_criteria) {
             $percentage = $subject_criteria->percentage;
-            $criteria_scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$subject_criteria->id]);
+            $criteria_scores = $this->mydb_model->fetch('criteria_scores', ['subject_criteria_id'=>$subject_criteria->id, 'is_deleted'=>0]);
             $total_criteria_score = 0;
             $total_student_score = 0;
             foreach ($criteria_scores as $criteria_score) {

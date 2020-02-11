@@ -258,6 +258,7 @@
 
     $('#previewGrade').click(function(e){
       var scores = $('#scoreStudentForm').serialize();
+      // console.log(scores);
       $.ajax({
         type: "POST",
         url: base_url+'teacherController/previewGrade',
